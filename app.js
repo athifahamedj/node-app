@@ -24,16 +24,43 @@
 // console.log(validator.isEmail("athif@gmail.com"));
 // console.log(validator.isURL("http://www.google.com"));
 
-const chalk = require("chalk");
+// const chalk = require("chalk");
 
-console.log(chalk.blue.inverse.bgRed.bold("Its", "nodemon"));
+// console.log(chalk.blue.inverse.bgRed.bold("Its", "nodemon"));
 
 const yargs = require("yargs");
+// yargs.command({
+//   command: "list",
+//   describe: "list a note",
+
+//   handler: function () {
+//     console.log("listed the note");
+//   },
+// });
+
+// console.log(yargs.argv);
+
+const notes = require("./notes.js");
+console.log(notes);
+
+// Create add command
 yargs.command({
-  command: "list",
-  describe: "list a note",
-  handler: function () {
-    console.log("listed the note");
+  command: "add",
+  describe: "Add a new note",
+  builder: {
+    title: {
+      describe: "Note title",
+      demandOption: true,
+      type: "string",
+    },
+    body: {
+      describe: "Note body",
+      demandOption: true,
+      type: "string",
+    },
+  },
+
+  handler(argv) {
+    notes.addNote(argv.title, argv.body);
   },
 });
-console.log(yargs.argv);
