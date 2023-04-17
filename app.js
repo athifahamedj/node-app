@@ -41,7 +41,7 @@ const yargs = require("yargs");
 // console.log(yargs.argv);
 
 const notes = require("./notes.js");
-console.log(notes);
+// console.log(notes);
 
 // Create add command
 yargs.command({

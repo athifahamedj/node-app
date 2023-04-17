@@ -9,6 +9,7 @@ const tasks = {
   getTasksToDo() {
     const filterData = this.tasks.filter((task) => {
       return task.completed === false;
+
       // console.log(task.completed);
     });
     return filterData;
