@@ -36,18 +36,34 @@ const { exit } = require("yargs");
 
 // });
 
-const geocode = (address, callback) => {
-  const url =
-    "https://api.openweathermap.org/data/2.5/weather?lat=13.028900&lon=80.239487&appid=6fb944ff2c125a9135bad967a9e20a1a";
+// const geocode = (address, callback) => {
+//   const url =
+//     "https://api.openweathermap.org/data/2.5/weather?lat=13.028900&lon=80.239487&appid=6fb944ff2c125a9135bad967a9e20a1a";
 
-  request({ url: url, json: true }, (error, response) => {
-    if (response) {
-      callback(response.body);
-    } else {
-      callback(error);
-    }
-  });
+//   request({ url: url, json: true }, (error, response) => {
+//     if (response) {
+//       callback(response.body);
+//     } else {
+//       callback(error);
+//     }
+//   });
+// };
+// geocode("india", (error, data) => {
+//   console.log(data);
+// });
+
+// object destructuring
+
+const obj = {
+  label: "TWS - Earphones",
+  brand: "Boat",
+  price: 1499,
+  quality: "Good",
 };
-geocode("india", (error, data) => {
-  console.log(data);
-});
+
+// const label = obj.label;
+const { label, brand, price } = obj;
+
+console.log("Brand :", brand);
+console.log("label :", label);
+console.log("price :", price);
