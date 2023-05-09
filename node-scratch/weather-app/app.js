@@ -64,6 +64,4 @@ const obj = {
 // const label = obj.label;
 const { label, brand, price } = obj;
 
-console.log("Brand :", brand);
-console.log("label :", label);
-console.log("price :", price);
+console.log("Label :", label);
