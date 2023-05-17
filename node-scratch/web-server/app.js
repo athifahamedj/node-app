@@ -47,12 +47,12 @@ app.get("/weather", (req, res) => {
   res.send("This is Weather Application");
 });
 
-app.get("*", (req, res) => {
-  res.send("No page found");
-});
-
 app.get("/help/*", (req, res) => {
   res.send("No help article found");
+});
+
+app.get("*", (req, res) => {
+  res.send("No page found");
 });
 
 app.listen(3001, () => {
