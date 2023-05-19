@@ -16,6 +16,19 @@ app.set("view engine", "hbs");
 app.set("views", viewpath);
 app.use(express.static(publicPath));
 
+app.get("/weather", (req, res) => {
+  if (!req.query.search) {
+    res.send({
+      error: "NO search query exists",
+    });
+  }
+  // console.log(req.query.search);
+  res.send({
+    response: "Success",
+    data: req.query.search,
+  });
+});
+
 // console.log(__dirname);
 app.get("", (req, res) => {
   res.render("index", {
@@ -37,14 +50,6 @@ app.get("/help", (req, res) => {
     name: "Athif",
     message: "This page helps you with whatever you need to know!!",
   });
-});
-
-app.get("/home", (req, res) => {
-  res.send("This is HOMEPAGE");
-});
-
-app.get("/weather", (req, res) => {
-  res.send("This is Weather Application");
 });
 
 app.get("/help/*", (req, res) => {
