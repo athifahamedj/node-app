@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const getNotes = function () {
   // toString()
-  const data = "Your notes...";
+  const data = "Your notes....";
   return data;
 };
 
